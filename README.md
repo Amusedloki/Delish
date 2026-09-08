@@ -33,7 +33,7 @@ js/lightbox.js              Shared lightbox
 js/home.js  menu.js  gallery.js  testimonials.js  specials.js  contact.js   Page logic
 ```
 
-## ⚠️ Placeholder content — replace before launch
+## Placeholder content 
 
 No real Delish business data was supplied with the brief, so the following are
 **clearly flagged placeholders** — do not publish them as real:
