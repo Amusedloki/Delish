@@ -7,6 +7,10 @@ data-driven menu and galleries.
 Built with plain **HTML / CSS / JavaScript** (no build step, no framework) so it
 runs anywhere — open `index.html` directly or serve the folder.
 
+## 🌐 Live Demo
+
+[View Delish Live](https://delish-restaurant-site.netlify.app/)
+
 ## Pages
 
 | Page | File | Highlights |
