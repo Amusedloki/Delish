@@ -50,6 +50,20 @@ window.DELISH_DATA = {
     { name: 'TikTok',    href: '#tiktok',     icon: 'tiktok' }
   ],
 
+  /* ---------- Online ordering (PLACEHOLDERS — replace before launch) ---------- */
+  order: {
+    deliveryFee: 1500,                       // TODO: real flat delivery fee (₦)
+    freeDeliveryOver: 50000,                 // TODO: threshold for free delivery, or remove
+    minOrder: 3000,                          // TODO: minimum order subtotal (₦)
+    prepMinutes: 35,                         // estimate shown to customers
+    whatsapp: '2348000000000',               // TODO: real WhatsApp number (intl format, no +)
+    note: 'Orders are confirmed by our team — pay on delivery or by transfer.',
+    areas: [                                 // TODO: real delivery zones
+      'GRA Phase II', 'Trans Amadi', 'Rumuokoro', 'Rumuigbo',
+      'Woji', 'Orologun', 'Rivers State University', 'Elelenwo'
+    ]
+  },
+
   /* ---------- Menu (PLACEHOLDER prices/dishes — replace) ---------- */
   menu: [
     /* ---- Starters ---- */

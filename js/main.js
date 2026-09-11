@@ -88,11 +88,27 @@
   }
 
   /* ---------- Mobile navigation ---------- */
+  /* NOTE: the CSS shows the overlay via .mobile-nav.open, so the .open
+     class must be kept in sync with body.nav-open or the menu never appears. */
   var toggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
   var closeBtn = document.getElementById('navClose');
-  function openNav() { document.body.classList.add('nav-open'); }
-  function closeNav() { document.body.classList.remove('nav-open'); }
+  function openNav() {
+    document.body.classList.add('nav-open');
+    if (mobileNav) mobileNav.classList.add('open');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+    }
+  }
+  function closeNav() {
+    document.body.classList.remove('nav-open');
+    if (mobileNav) mobileNav.classList.remove('open');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }
+  }
   if (toggle) toggle.addEventListener('click', function () {
     document.body.classList.contains('nav-open') ? closeNav() : openNav();
   });
@@ -105,6 +121,8 @@
       if (e.key === 'Escape') closeNav();
     });
   }
+  window.DELISH = window.DELISH || {};
+  window.DELISH.closeNav = closeNav;
 
   /* ---------- Scroll reveal + stagger ---------- */
   var revealObs = null;

@@ -3,35 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Menu — Delish | Restaurant in Port Harcourt</title>
-<meta name="description" content="Explore the Delish menu — smoky jollof rice, suya, grilled catfish, wood-fired pizza and more. Contemporary Nigerian and international dining in Port Harcourt.">
+<title>Order Online — Delish | Delivery &amp; Pickup in Port Harcourt</title>
+<meta name="description" content="Order Delish online for delivery or pickup in Port Harcourt — smoky jollof, suya, grilled catfish and more, delivered hot to your door.">
 <meta name="theme-color" content="#1E1E1E">
-<link rel="canonical" href="https://www.delish.ng/menu.html"><!-- TODO: replace placeholder domain -->
+<link rel="canonical" href="https://www.delish.ng/order.html"><!-- TODO: replace placeholder domain -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Our Menu — Delish">
-<meta property="og:description" content="Smoky jollof, suya, grilled catfish and wood-fired pizza — the Delish menu in Port Harcourt.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=70">
-<meta property="og:url" content="https://www.delish.ng/menu.html">
+<meta property="og:title" content="Order Online — Delish">
+<meta property="og:description" content="Order Delish online for delivery or pickup in Port Harcourt.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=70">
+<meta property="og:url" content="https://www.delish.ng/order.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23A34A24'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='32' font-weight='bold' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=2000&q=72">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Delish",
-  "slogan": "Savoring the world, one bite at a time.",
-  "servesCuisine": ["Nigerian", "Contemporary", "International"],
-  "priceRange": "\u20A6\u20A6",
-  "url": "https://www.delish.ng/",
-  "address": { "@type": "PostalAddress", "streetAddress": "123 Aba Road, GRA Phase II", "addressLocality": "Port Harcourt", "addressRegion": "Rivers State", "addressCountry": "NG" },
-  "telephone": "+234 800 000 0000",
-  "email": "hello@delish.ng"
-}
-</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -43,14 +28,14 @@
       <ul class="main-nav">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
-        <li><a class="nav-link active" href="menu.html" aria-current="page">Menu</a></li>
+        <li><a class="nav-link" href="menu.html">Menu</a></li>
         <li><a class="nav-link" href="specials.html">Specials</a></li>
         <li><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn btn--primary header-cta" href="order.html">Order Online</a>
+    <a class="btn btn--primary header-cta" href="menu.html">Order Online</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -64,37 +49,93 @@
   <a class="m-nav-link" href="gallery.html">Gallery</a>
   <a class="m-nav-link" href="testimonials.html">Testimonials</a>
   <a class="m-nav-link" href="contact.html">Contact</a>
-  <a class="btn btn--primary mobile-nav-cta" href="order.html">Order Online</a>
+  <a class="btn btn--primary mobile-nav-cta" href="menu.html">Order Online</a>
 </nav>
 
 <main id="main">
 
   <section class="page-hero">
-    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=2000&q=72" alt="" fetchpriority="high"></div>
+    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2000&q=72" alt="" fetchpriority="high"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <span class="eyebrow">The Menu</span>
-      <h1>Our Menu</h1>
-      <p class="hero-sub">Bold Nigerian flavours and international favourites, cooked with discipline and served with warmth. Prices in Naira (&#8358;).</p>
+      <span class="eyebrow">Order Online</span>
+      <h1>Delish, at your door.</h1>
+      <p class="hero-sub">Delivery across Port Harcourt or pickup at the restaurant — same kitchen, same flavours.</p>
     </div>
   </section>
 
-  <div class="menu-filter" id="menuFilter">
-    <div class="container inner" role="tablist" aria-label="Menu categories">
-      <button class="filter-btn active" data-cat="All" aria-pressed="true">All</button>
-      <button class="filter-btn" data-cat="Starters" aria-pressed="false">Starters</button>
-      <button class="filter-btn" data-cat="Main Courses" aria-pressed="false">Main Courses</button>
-      <button class="filter-btn" data-cat="Rice &amp; Local Favorites" aria-pressed="false">Rice &amp; Local Favorites</button>
-      <button class="filter-btn" data-cat="International Favorites" aria-pressed="false">International Favorites</button>
-      <button class="filter-btn" data-cat="Desserts" aria-pressed="false">Desserts</button>
-      <button class="filter-btn" data-cat="Drinks" aria-pressed="false">Drinks</button>
-    </div>
-  </div>
-
   <section class="section section--tight">
     <div class="container">
-      <div class="dish-grid" id="menuGrid" style="padding-top:2.2rem"></div>
-      <p class="menu-note" id="menuNote"></p>
+      <div class="order-info-strip reveal">
+        <div class="info-cell">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong id="orderEta">~35 min</strong><span>Estimated preparation</span></div>
+        </div>
+        <div class="info-cell">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <div><strong id="orderFee">₦1,500 delivery</strong><span id="orderFreeOver"></span></div>
+        </div>
+        <div class="info-cell">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7h20"/></svg>
+          <div><strong>Pay on delivery</strong><span>Cash or bank transfer</span></div>
+        </div>
+      </div>
+
+      <div class="order-wrap">
+        <!-- Order details form -->
+        <div class="order-card reveal">
+          <h2>Delivery Details</h2>
+          <p class="sub">Send your order to our kitchen on WhatsApp — we'll confirm right away.</p>
+          <form id="orderForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="oName">Full Name <span class="req">*</span></label>
+                <input type="text" id="oName" name="name" autocomplete="name" placeholder="e.g. Adaeze Okafor" required>
+                <span class="err">Please enter your full name.</span>
+              </div>
+              <div class="field">
+                <label for="oPhone">Phone / WhatsApp <span class="req">*</span></label>
+                <input type="tel" id="oPhone" name="phone" autocomplete="tel" placeholder="+234 800 000 0000" required>
+                <span class="err">Please enter a valid phone number.</span>
+              </div>
+              <div class="field field--full">
+                <label>Order Type <span class="req">*</span></label>
+                <div class="type-toggle" role="radiogroup" aria-label="Order type">
+                  <label class="type-opt"><input type="radio" name="otype" value="Delivery" checked><span>🛵 Delivery</span></label>
+                  <label class="type-opt"><input type="radio" name="otype" value="Pickup"><span>🏃 Pickup</span></label>
+                </div>
+              </div>
+              <div class="field field--full" id="addressField">
+                <label for="oAddress">Delivery Address <span class="req">*</span></label>
+                <input type="text" id="oAddress" name="address" autocomplete="street-address" placeholder="House number, street, landmark…" required>
+                <span class="err">Please enter your delivery address.</span>
+              </div>
+              <div class="field field--full" id="areaField">
+                <label for="oArea">Area <span class="req">*</span></label>
+                <select id="oArea" name="area" required>
+                  <option value="" selected disabled>Select your area</option>
+                </select>
+                <span class="err">Please select your area.</span>
+              </div>
+              <div class="field field--full">
+                <label for="oWhen">Preferred Time</label>
+                <input type="text" id="oWhen" name="when" placeholder="e.g. As soon as possible, or 7:30 PM">
+              </div>
+              <div class="field field--full">
+                <label for="oNotes">Order Notes</label>
+                <textarea id="oNotes" name="notes" placeholder="Allergies, spice level, extra sauce…"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Order summary -->
+        <div class="order-card order-summary reveal">
+          <h2>Your Order</h2>
+          <p class="sub">Review your items before sending.</p>
+          <div id="summaryBody"></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -122,7 +163,6 @@
           <li><a href="specials.html">Specials</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="order.html">Order Online</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -156,6 +196,6 @@
 <script src="js/main.js"></script>
 <script src="js/render.js"></script>
 <script src="js/cart.js"></script>
-<script src="js/menu.js"></script>
+<script src="js/order.js"></script>
 </body>
 </html>

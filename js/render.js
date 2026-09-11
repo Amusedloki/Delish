@@ -60,6 +60,7 @@
           '<div class="dish-actions">' +
             '<a class="view-link" href="menu.html" data-notransition>' +
               'View Details <span class="arr">&#8594;</span></a>' +
+            '<button class="btn btn--primary btn--sm add-btn" type="button" data-add="' + window.escapeHtml(dish.id) + '">Add to Order</button>' +
             (dish.spicy ? '<span class="dish-spicy">&#128293; ' + dish.spicy + '/3</span>' : '') +
           '</div>' +
         '</div>' +
@@ -79,6 +80,15 @@
     }).join('');
     if (!animate) D.refreshReveal();
   };
+
+  /* ---------- Add-to-order delegation (works for every rendered card) ---------- */
+  document.addEventListener('click', function (e) {
+    var addBtn = e.target.closest ? e.target.closest('[data-add]') : null;
+    if (!addBtn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (D.cart && D.cart.add) D.cart.add(addBtn.getAttribute('data-add'), 1);
+  });
 
   /* ---------- Food detail modal ---------- */
   var modalEl = null;
@@ -100,9 +110,14 @@
           '<p class="modal-desc"></p>' +
           '<div class="modal-sec"><h4>Ingredients</h4><div class="ing-list"></div></div>' +
           '<div class="modal-badges"></div>' +
+          '<div class="modal-qty">' +
+            '<button class="qty-btn" type="button" data-mqty="-1" aria-label="Decrease quantity">&minus;</button>' +
+            '<input class="qty-input" type="number" min="1" max="99" value="1" aria-label="Quantity">' +
+            '<button class="qty-btn" type="button" data-mqty="1" aria-label="Increase quantity">+</button>' +
+          '</div>' +
           '<div class="modal-cta">' +
-            '<a class="btn btn--primary" href="contact.html">Reserve a Table</a>' +
-            '<button class="btn btn--ghost-dark order-btn">Order Online</button>' +
+            '<button class="btn btn--primary modal-add-btn">Add to Order</button>' +
+            '<a class="btn btn--ghost-dark" href="contact.html">Reserve a Table</a>' +
           '</div>' +
         '</div>' +
         '<button class="modal-close" aria-label="Close">&times;</button>' +
@@ -113,16 +128,28 @@
       if (e.target === modalEl || e.target.classList.contains('modal-backdrop') ||
           e.target.classList.contains('modal-close')) closeModal();
     });
-    modalEl.querySelector('.order-btn').addEventListener('click', function () {
-      D.toast('Online ordering is coming soon — call us or reserve a table instead.');
+    var mQty = modalEl.querySelector('.qty-input');
+    modalEl.querySelectorAll('[data-mqty]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = (parseInt(mQty.value, 10) || 1) + parseInt(b.getAttribute('data-mqty'), 10);
+        mQty.value = Math.min(99, Math.max(1, v));
+      });
+    });
+    modalEl.querySelector('.modal-add-btn').addEventListener('click', function () {
+      if (currentDish && D.cart && D.cart.add) {
+        D.cart.add(currentDish.id, parseInt(mQty.value, 10) || 1);
+        closeModal();
+      }
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modalEl.classList.contains('open')) closeModal();
     });
     return modalEl;
   }
+  var currentDish = null;
   D.openFoodModal = function (dish) {
     if (!dish) return;
+    currentDish = dish;
     var m = ensureModal();
     m.querySelector('.modal-media img').src = dish.image;
     m.querySelector('.modal-media img').alt = dish.name;
@@ -130,6 +157,7 @@
     m.querySelector('.dish-name').textContent = dish.name;
     m.querySelector('.dish-price').textContent = fmt(dish.price);
     m.querySelector('.modal-desc').textContent = dish.description;
+    m.querySelector('.qty-input').value = '1';
     var ing = dish.ingredients || (dish.description.split(', ').slice(0, 3));
     m.querySelector('.ing-list').innerHTML = ing.map(function (i) {
       return '<span class="ing-chip">' + window.escapeHtml(i) + '</span>';
@@ -150,7 +178,7 @@
   document.addEventListener('click', function (e) {
     var card = e.target.closest ? e.target.closest('.dish-card[data-id]') : null;
     if (!card) return;
-    if (e.target.closest('a')) return; // let "View Details" navigate
+    if (e.target.closest('a') || e.target.closest('[data-add]')) return; // let links / add-to-order be
     var dish = D.dishById(card.getAttribute('data-id'));
     if (dish) D.openFoodModal(dish);
   });
